@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		D4751A981F99949F005EEAAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4751A971F99949F005EEAAD /* AppDelegate.swift */; };
-		D4751A9A1F99949F005EEAAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4751A991F99949F005EEAAD /* ViewController.swift */; };
 		D4751A9D1F99949F005EEAAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4751A9B1F99949F005EEAAD /* Main.storyboard */; };
 		D4751A9F1F99949F005EEAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4751A9E1F99949F005EEAAD /* Assets.xcassets */; };
 		D4751AA21F99949F005EEAAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4751AA01F99949F005EEAAD /* LaunchScreen.storyboard */; };
+		D4751AAA1F999790005EEAAD /* EateriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */; };
+		D4751AAC1F99A59A005EEAAD /* EateriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D4751A941F99949F005EEAAD /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4751A971F99949F005EEAAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4751A991F99949F005EEAAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D4751A9C1F99949F005EEAAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4751A9E1F99949F005EEAAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4751AA11F99949F005EEAAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4751AA31F99949F005EEAAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewController.swift; sourceTree = "<group>"; };
+		D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +56,13 @@
 		D4751A961F99949F005EEAAD /* Eateries */ = {
 			isa = PBXGroup;
 			children = (
-				D4751A971F99949F005EEAAD /* AppDelegate.swift */,
-				D4751A991F99949F005EEAAD /* ViewController.swift */,
-				D4751A9B1F99949F005EEAAD /* Main.storyboard */,
-				D4751A9E1F99949F005EEAAD /* Assets.xcassets */,
-				D4751AA01F99949F005EEAAD /* LaunchScreen.storyboard */,
 				D4751AA31F99949F005EEAAD /* Info.plist */,
+				D4751AA01F99949F005EEAAD /* LaunchScreen.storyboard */,
+				D4751A9E1F99949F005EEAAD /* Assets.xcassets */,
+				D4751A971F99949F005EEAAD /* AppDelegate.swift */,
+				D4751A9B1F99949F005EEAAD /* Main.storyboard */,
+				D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */,
+				D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
@@ -136,8 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4751A9A1F99949F005EEAAD /* ViewController.swift in Sources */,
 				D4751A981F99949F005EEAAD /* AppDelegate.swift in Sources */,
+				D4751AAA1F999790005EEAAD /* EateriesTableViewController.swift in Sources */,
+				D4751AAC1F99A59A005EEAAD /* EateriesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +285,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreamline.Eateries;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -296,7 +300,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreamline.Eateries;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
