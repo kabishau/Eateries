@@ -10,9 +10,11 @@ import UIKit
 
 class EateriesTableViewController: UITableViewController {
     
-    let restaurantNames = ["Ogonёk Grill&Bar", "Елу", "Bonsai", "Дастархан", "Индокитай", "X.O", "Балкан Гриль", "Respublica", "Speak Easy", "Morris Pub", "Вкусные истории", "Классик", "Love&Life", "Шок", "Бочка"]
+    var restaurantNames = ["Ogonёk Grill&Bar", "Елу", "Bonsai", "Дастархан", "Индокитай", "X.O", "Балкан Гриль", "Respublica", "Speak Easy", "Morris Pub", "Вкусные истории", "Классик", "Love&Life", "Шок", "Бочка"]
     
-    let restaurantImages = ["ogonek.jpg", "elu.jpg", "bonsai.jpg", "dastarhan.jpg", "indokitay.jpg", "x.o.jpg", "balkan.jpg", "respublika.jpg", "speakeasy.jpg", "morris.jpg", "istorii.jpg", "klassik.jpg", "love.jpg", "shok.jpg", "bochka.jpg"]
+    var restaurantImages = ["ogonek.jpg", "elu.jpg", "bonsai.jpg", "dastarhan.jpg", "indokitay.jpg", "x.o.jpg", "balkan.jpg", "respublika.jpg", "speakeasy.jpg", "morris.jpg", "istorii.jpg", "klassik.jpg", "love.jpg", "shok.jpg", "bochka.jpg"]
+    
+    var restaurantIsVisited = [Bool](repeatElement(false, count: 15))
     
     
     override func viewDidLoad() {
@@ -40,6 +42,9 @@ class EateriesTableViewController: UITableViewController {
         // making images round
         cell.thumbnailImageView.layer.cornerRadius = 32.5
         cell.thumbnailImageView.clipsToBounds = true
+        
+        // ternary operator - replacement of if-else statement
+        cell.accessoryType = self.restaurantIsVisited[indexPath.row] ? .checkmark : .none
 
 
         return cell
@@ -58,10 +63,13 @@ class EateriesTableViewController: UITableViewController {
             alertController.addAction(okay)
             self.present(alertController, animated: true, completion: nil)
         }
-        let isVisited = UIAlertAction(title: "I've been there", style: .default) { (action) in
+        
+        let visitedTitle = self.restaurantIsVisited[indexPath.row] ? "Check out" : "Check In"
+        let isVisited = UIAlertAction(title: visitedTitle, style: .default) { (action) in
+
             let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
-            
+            self.restaurantIsVisited[indexPath.row] = !self.restaurantIsVisited[indexPath.row]
+            cell?.accessoryType = self.restaurantIsVisited[indexPath.row] ? .checkmark : .none
         }
         
         alertController.addAction(cancel)
@@ -69,6 +77,18 @@ class EateriesTableViewController: UITableViewController {
         alertController.addAction(isVisited)
         present(alertController, animated: true, completion: nil)
         
+        // deselecting standart highlighting
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            restaurantNames.remove(at: indexPath.row)
+            restaurantImages.remove(at: indexPath.row)
+            restaurantIsVisited.remove(at: indexPath.row)
+        }
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
     
 
