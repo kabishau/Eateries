@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7jJ-Aq-rQ5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ddt-fJ-cgc">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -13,7 +14,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Eateries Table View Controller-->
+        <!--Restaurants-->
         <scene sceneID="HRc-Rl-BRO">
             <objects>
                 <tableViewController id="7jJ-Aq-rQ5" customClass="EateriesTableViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,6 +75,7 @@
                                     <outlet property="nameLabel" destination="iad-tL-LkB" id="MSM-vw-h9T"/>
                                     <outlet property="thumbnailImageView" destination="Oto-Rs-nIZ" id="8UH-zu-Dj3"/>
                                     <outlet property="typeLabel" destination="kI6-9B-hfH" id="czJ-c0-1xy"/>
+                                    <segue destination="ovb-ce-ZwB" kind="show" identifier="detailSegue" id="OYv-CU-EmB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -82,10 +84,58 @@
                             <outlet property="delegate" destination="7jJ-Aq-rQ5" id="H5f-f2-lbR"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Restaurants" id="QzL-NP-Mx8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohe-1R-Eb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="141"/>
+            <point key="canvasLocation" x="495" y="140.49295774647888"/>
+        </scene>
+        <!--Detail Eatery View Controller-->
+        <scene sceneID="co0-RM-qT3">
+            <objects>
+                <viewController id="ovb-ce-ZwB" customClass="DetailEateryViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7aA-NL-bhy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hua-3I-BsK">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hua-3I-BsK" firstAttribute="top" secondItem="m8w-TK-OrP" secondAttribute="top" id="6Aa-dc-kxZ"/>
+                            <constraint firstItem="hua-3I-BsK" firstAttribute="trailing" secondItem="m8w-TK-OrP" secondAttribute="trailing" id="LM4-aA-U6y"/>
+                            <constraint firstItem="hua-3I-BsK" firstAttribute="leading" secondItem="m8w-TK-OrP" secondAttribute="leading" id="MRS-1g-9H7"/>
+                            <constraint firstItem="hua-3I-BsK" firstAttribute="bottom" secondItem="m8w-TK-OrP" secondAttribute="bottom" id="oIl-q3-5js"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m8w-TK-OrP"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="hua-3I-BsK" id="KzV-0K-U3x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ey0-FE-au2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1248.75" y="146.83098591549296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="80c-Wz-X30">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ddt-fJ-cgc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dBG-7A-LOM">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7jJ-Aq-rQ5" kind="relationship" relationship="rootViewController" id="aqu-IT-jhJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61F-rY-sCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-203" y="140"/>
         </scene>
     </scenes>
 </document>

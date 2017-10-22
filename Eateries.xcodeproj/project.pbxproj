@@ -14,6 +14,7 @@
 		D4751AAA1F999790005EEAAD /* EateriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */; };
 		D4751AAC1F99A59A005EEAAD /* EateriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */; };
 		D4751AB01F9C0D35005EEAAD /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4751AAF1F9C0D35005EEAAD /* Restaurants.swift */; };
+		D4751AB21F9C165F005EEAAD /* DetailEateryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4751AB11F9C165F005EEAAD /* DetailEateryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewController.swift; sourceTree = "<group>"; };
 		D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewCell.swift; sourceTree = "<group>"; };
 		D4751AAF1F9C0D35005EEAAD /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
+		D4751AB11F9C165F005EEAAD /* DetailEateryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEateryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,11 @@
 				D4751AA01F99949F005EEAAD /* LaunchScreen.storyboard */,
 				D4751A9E1F99949F005EEAAD /* Assets.xcassets */,
 				D4751A971F99949F005EEAAD /* AppDelegate.swift */,
-				D4751A9B1F99949F005EEAAD /* Main.storyboard */,
-				D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */,
-				D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */,
 				D4751AAF1F9C0D35005EEAAD /* Restaurants.swift */,
+				D4751A9B1F99949F005EEAAD /* Main.storyboard */,
+				D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */,
+				D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */,
+				D4751AB11F9C165F005EEAAD /* DetailEateryViewController.swift */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				D4751A981F99949F005EEAAD /* AppDelegate.swift in Sources */,
 				D4751AAA1F999790005EEAAD /* EateriesTableViewController.swift in Sources */,
 				D4751AAC1F99A59A005EEAAD /* EateriesTableViewCell.swift in Sources */,
+				D4751AB21F9C165F005EEAAD /* DetailEateryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

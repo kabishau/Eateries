@@ -47,14 +47,14 @@ class EateriesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EateriesTableViewCell
         
         cell.nameLabel.text = restaurants[indexPath.row].name
+        cell.typeLabel.text = restaurants[indexPath.row].type
+        cell.locationLabel.text = restaurants[indexPath.row].location
         cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
+        cell.accessoryType = self.restaurants[indexPath.row].isVisited ? .checkmark : .none
+        
         // making images round
         cell.thumbnailImageView.layer.cornerRadius = 32.5
         cell.thumbnailImageView.clipsToBounds = true
-        
-        // ternary operator - replacement of if-else statement
-        cell.accessoryType = self.restaurants[indexPath.row].isVisited ? .checkmark : .none
-
 
         return cell
     }
@@ -96,12 +96,47 @@ class EateriesTableViewController: UITableViewController {
         
     }
 */
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            restaurants.remove(at: indexPath.row)
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            restaurants.remove(at: indexPath.row)
+//        }
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+//    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+            self.restaurants.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        tableView.deleteRows(at: [indexPath], with: .fade)
+        let share = UITableViewRowAction(style: .default, title: "Share") { (action, indexPath) in
+            
+            let defaulText = "I'm in \(self.restaurants[indexPath.row].name)"
+            if let image = UIImage(named: self.restaurants[indexPath.row].image) {
+                let activityController = UIActivityViewController(activityItems: [defaulText, image], applicationActivities: nil)
+                self.present(activityController, animated: true, completion: nil)
+            }
+        }
+        
+        delete.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        share.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        
+        return [delete, share]
     }
+    
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationViewController = segue.destination as! DetailEateryViewController
+                destinationViewController.imageName = self.restaurants[indexPath.row].image
+            }
+        }
+    }
+    
     
 
 
