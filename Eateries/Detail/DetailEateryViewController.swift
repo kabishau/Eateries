@@ -19,11 +19,14 @@ class DetailEateryViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         imageView.image = UIImage(named: restaurant.image)
-        
-        // table view customization
+
         // removing the rest of the unused tableView
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
+        //tableView.separatorColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        // I didn't get how this works - name of the restaurant is displayed in navigation bar
+        title = restaurant.name
         
     }
     
