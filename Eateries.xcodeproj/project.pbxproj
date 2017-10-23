@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4100BC41F9D5A9900367630 /* DetailEateryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */; };
 		D4751A981F99949F005EEAAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4751A971F99949F005EEAAD /* AppDelegate.swift */; };
 		D4751A9D1F99949F005EEAAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4751A9B1F99949F005EEAAD /* Main.storyboard */; };
 		D4751A9F1F99949F005EEAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4751A9E1F99949F005EEAAD /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEateryTableViewCell.swift; sourceTree = "<group>"; };
 		D4751A941F99949F005EEAAD /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4751A971F99949F005EEAAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4751A9C1F99949F005EEAAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4100BC21F9D5A5500367630 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */,
+				D4751AB11F9C165F005EEAAD /* DetailEateryViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		D4751A8B1F99949F005EEAAD = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +79,7 @@
 				D4751A9B1F99949F005EEAAD /* Main.storyboard */,
 				D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */,
 				D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */,
-				D4751AB11F9C165F005EEAAD /* DetailEateryViewController.swift */,
+				D4100BC21F9D5A5500367630 /* Detail */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
@@ -145,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4100BC41F9D5A9900367630 /* DetailEateryTableViewCell.swift in Sources */,
 				D4751AB01F9C0D35005EEAAD /* Restaurants.swift in Sources */,
 				D4751A981F99949F005EEAAD /* AppDelegate.swift in Sources */,
 				D4751AAA1F999790005EEAAD /* EateriesTableViewController.swift in Sources */,
