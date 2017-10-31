@@ -23,6 +23,10 @@ class DetailEateryViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // self-sizing cell methods
+        tableView.estimatedRowHeight = 38
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         imageView.image = UIImage(named: restaurant.image)
 
         // removing the rest of the unused tableView

@@ -11,10 +11,10 @@ import UIKit
 class EateriesTableViewController: UITableViewController {
     
     var restaurants: [Restaurant] = [
-        Restaurant(name: "Ogonёk Grill&Bar", type: "ресторан", location: "Уфа", image: "ogonek.jpg", isVisited: false),
+        Restaurant(name: "Ogonёk Grill&Bar", type: "ресторан", location: "Уфа, very-very long super-duper address that will never and", image: "ogonek.jpg", isVisited: false),
         Restaurant(name: "Елу", type: "ресторан", location: "Уфа", image: "elu.jpg", isVisited: false),
         Restaurant(name: "Bonsai", type: "ресторан", location: "Уфа", image: "bonsai.jpg", isVisited: false),
-        Restaurant(name: "Дастархан", type: "ресторан", location: "Уфа", image: "dastarhan.jpg", isVisited: false),
+        Restaurant(name: "Дастархан", type: "ресторан", location: "Уфа, very-very long super-duper address that will never and", image: "dastarhan.jpg", isVisited: false),
         Restaurant(name: "Индокитай", type: "ресторан", location: "Уфа", image: "indokitay.jpg", isVisited: false),
         Restaurant(name: "X.O", type: "ресторан-клуб", location: "Уфа", image: "x.o.jpg", isVisited: false),
         Restaurant(name: "Балкан Гриль", type: "ресторан", location: "Уфа", image: "balkan.jpg", isVisited: false),
@@ -35,6 +35,10 @@ class EateriesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // self-sizing cell establishing
+        tableView.estimatedRowHeight = 85
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         // removing name from back button in navigation bar for detail view controller
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
