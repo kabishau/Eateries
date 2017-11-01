@@ -13,6 +13,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Bold</string>
             <string>AppleSDGothicNeo-Regular</string>
             <string>AppleSDGothicNeo-SemiBold</string>
         </array>
@@ -190,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="1248.75" y="146.83098591549296"/>
         </scene>
-        <!--View Controller-->
+        <!--Rate View Controller-->
         <scene sceneID="ld3-Ke-yyc">
             <objects>
-                <viewController id="NUz-qX-RUx" sceneMemberID="viewController">
+                <viewController id="NUz-qX-RUx" customClass="RateViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RFA-Hd-bBf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,15 +213,47 @@
                                     <segue destination="Y9v-pM-kYB" kind="unwind" unwindAction="unwindsegueWithSegue:" id="XTr-VL-0p7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you enjoy?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrC-Bj-Sz0">
+                                <rect key="frame" x="45" y="149" width="230" height="42.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="RJa-Cv-Bi1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZV9-ew-fXM">
+                                <rect key="frame" x="0.0" y="242" width="320" height="85"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64q-t1-Nzz">
+                                        <rect key="frame" x="0.0" y="0.0" width="106.5" height="85"/>
+                                        <state key="normal" image="bad"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKo-AX-sbl">
+                                        <rect key="frame" x="106.5" y="0.0" width="107" height="85"/>
+                                        <state key="normal" image="good"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAL-7U-AwU">
+                                        <rect key="frame" x="213.5" y="0.0" width="106.5" height="85"/>
+                                        <state key="normal" image="brilliant"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yq1-Aa-kdS" firstAttribute="trailing" secondItem="1kA-Rz-vgo" secondAttribute="trailing" id="4WD-7v-gg1"/>
                             <constraint firstItem="E89-lo-mPa" firstAttribute="top" secondItem="yq1-Aa-kdS" secondAttribute="top" constant="10" id="A5Q-JA-nV5"/>
                             <constraint firstItem="yq1-Aa-kdS" firstAttribute="bottom" secondItem="1kA-Rz-vgo" secondAttribute="bottom" id="G5Z-en-iYn"/>
+                            <constraint firstItem="ZV9-ew-fXM" firstAttribute="leading" secondItem="yq1-Aa-kdS" secondAttribute="leading" id="G8P-Op-vOB"/>
                             <constraint firstItem="yq1-Aa-kdS" firstAttribute="trailing" secondItem="E89-lo-mPa" secondAttribute="trailing" constant="16" id="Kjy-ln-C7b"/>
+                            <constraint firstItem="GrC-Bj-Sz0" firstAttribute="centerX" secondItem="1kA-Rz-vgo" secondAttribute="centerX" id="Twv-x5-4Ft"/>
+                            <constraint firstItem="GrC-Bj-Sz0" firstAttribute="top" secondItem="E89-lo-mPa" secondAttribute="bottom" constant="79" id="V6W-CV-OrZ"/>
+                            <constraint firstItem="ZV9-ew-fXM" firstAttribute="top" secondItem="GrC-Bj-Sz0" secondAttribute="bottom" constant="50.5" id="ZWZ-bm-gju"/>
+                            <constraint firstItem="ZV9-ew-fXM" firstAttribute="centerX" secondItem="1kA-Rz-vgo" secondAttribute="centerX" id="eLy-jS-SzL"/>
                             <constraint firstItem="1kA-Rz-vgo" firstAttribute="leading" secondItem="yq1-Aa-kdS" secondAttribute="leading" id="jJP-j1-C8F"/>
                             <constraint firstItem="1kA-Rz-vgo" firstAttribute="top" secondItem="RFA-Hd-bBf" secondAttribute="top" id="pAw-ne-gpP"/>
+                            <constraint firstItem="yq1-Aa-kdS" firstAttribute="trailing" secondItem="ZV9-ew-fXM" secondAttribute="trailing" id="vER-Ft-fgr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yq1-Aa-kdS"/>
                     </view>
@@ -250,6 +283,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bad" width="85" height="85"/>
+        <image name="brilliant" width="85" height="85"/>
         <image name="close" width="50" height="50"/>
         <image name="good" width="85" height="85"/>
         <image name="rateBackground" width="200" height="286"/>

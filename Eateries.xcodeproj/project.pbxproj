@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2275A2001FAA8B4800080602 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275A1FF1FAA8B4800080602 /* RateViewController.swift */; };
 		D4100BC41F9D5A9900367630 /* DetailEateryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */; };
 		D4751A981F99949F005EEAAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4751A971F99949F005EEAAD /* AppDelegate.swift */; };
 		D4751A9D1F99949F005EEAAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4751A9B1F99949F005EEAAD /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2275A1FF1FAA8B4800080602 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEateryTableViewCell.swift; sourceTree = "<group>"; };
 		D4751A941F99949F005EEAAD /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4751A971F99949F005EEAAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */,
 				D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */,
 				D4100BC21F9D5A5500367630 /* Detail */,
+				2275A1FF1FAA8B4800080602 /* RateViewController.swift */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				D4751AAA1F999790005EEAAD /* EateriesTableViewController.swift in Sources */,
 				D4751AAC1F99A59A005EEAAD /* EateriesTableViewCell.swift in Sources */,
 				D4751AB21F9C165F005EEAAD /* DetailEateryViewController.swift in Sources */,
+				2275A2001FAA8B4800080602 /* RateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
