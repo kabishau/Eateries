@@ -164,6 +164,9 @@
                                     <constraint firstAttribute="height" constant="50" id="WOZ-c2-HGJ"/>
                                 </constraints>
                                 <state key="normal" image="good"/>
+                                <connections>
+                                    <segue destination="NUz-qX-RUx" kind="showDetail" id="RFX-3h-vs8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,13 +197,38 @@
                     <view key="view" contentMode="scaleToFill" id="RFA-Hd-bBf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rateBackground" translatesAutoresizingMaskIntoConstraints="NO" id="1kA-Rz-vgo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E89-lo-mPa">
+                                <rect key="frame" x="264" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vc7-Ae-Ie5"/>
+                                    <constraint firstAttribute="width" secondItem="E89-lo-mPa" secondAttribute="height" multiplier="1:1" id="sv9-Qc-0gD"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <segue destination="Y9v-pM-kYB" kind="unwind" unwindAction="unwindsegueWithSegue:" id="XTr-VL-0p7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yq1-Aa-kdS" firstAttribute="trailing" secondItem="1kA-Rz-vgo" secondAttribute="trailing" id="4WD-7v-gg1"/>
+                            <constraint firstItem="E89-lo-mPa" firstAttribute="top" secondItem="yq1-Aa-kdS" secondAttribute="top" constant="10" id="A5Q-JA-nV5"/>
+                            <constraint firstItem="yq1-Aa-kdS" firstAttribute="bottom" secondItem="1kA-Rz-vgo" secondAttribute="bottom" id="G5Z-en-iYn"/>
+                            <constraint firstItem="yq1-Aa-kdS" firstAttribute="trailing" secondItem="E89-lo-mPa" secondAttribute="trailing" constant="16" id="Kjy-ln-C7b"/>
+                            <constraint firstItem="1kA-Rz-vgo" firstAttribute="leading" secondItem="yq1-Aa-kdS" secondAttribute="leading" id="jJP-j1-C8F"/>
+                            <constraint firstItem="1kA-Rz-vgo" firstAttribute="top" secondItem="RFA-Hd-bBf" secondAttribute="top" id="pAw-ne-gpP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yq1-Aa-kdS"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Tz-3h-fJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Y9v-pM-kYB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2041" y="150"/>
+            <point key="canvasLocation" x="2040" y="150"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="80c-Wz-X30">
@@ -222,6 +250,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="50" height="50"/>
         <image name="good" width="85" height="85"/>
+        <image name="rateBackground" width="200" height="286"/>
     </resources>
 </document>

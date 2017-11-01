@@ -16,6 +16,11 @@ class DetailEateryViewController: UIViewController, UITableViewDataSource, UITab
     
     var restaurant: Restaurant!
     
+    // should be connected to "exit-button" through the Exit section
+    @IBAction func unwindsegue(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
