@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -157,24 +157,50 @@
                                     <outlet property="delegate" destination="ovb-ce-ZwB" id="g2H-kH-mFo"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5z-Yf-8O3">
+                                <rect key="frame" x="254" y="78" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="k5z-Yf-8O3" secondAttribute="height" multiplier="1:1" id="B7O-uz-Uzc"/>
+                                    <constraint firstAttribute="height" constant="50" id="WOZ-c2-HGJ"/>
+                                </constraints>
+                                <state key="normal" image="good"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="m8w-TK-OrP" firstAttribute="bottom" secondItem="Ve5-hu-T0Q" secondAttribute="bottom" id="184-cW-Q4A"/>
+                            <constraint firstItem="k5z-Yf-8O3" firstAttribute="top" secondItem="m8w-TK-OrP" secondAttribute="top" constant="14" id="4yN-1R-Ile"/>
                             <constraint firstItem="Ve5-hu-T0Q" firstAttribute="top" secondItem="m8w-TK-OrP" secondAttribute="top" id="P53-d9-ttl"/>
                             <constraint firstItem="Ve5-hu-T0Q" firstAttribute="leading" secondItem="m8w-TK-OrP" secondAttribute="leading" id="n0U-LD-iYZ"/>
                             <constraint firstItem="m8w-TK-OrP" firstAttribute="trailing" secondItem="Ve5-hu-T0Q" secondAttribute="trailing" id="qd0-IE-xZb"/>
+                            <constraint firstItem="m8w-TK-OrP" firstAttribute="trailing" secondItem="k5z-Yf-8O3" secondAttribute="trailing" constant="16" id="xrM-AM-wyM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m8w-TK-OrP"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="zxo-zU-4hm" id="zPm-n6-JKH"/>
+                        <outlet property="rateButton" destination="k5z-Yf-8O3" id="El2-H6-2Gi"/>
                         <outlet property="tableView" destination="Ve5-hu-T0Q" id="6kQ-HO-iZv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey0-FE-au2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1248.75" y="146.83098591549296"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ld3-Ke-yyc">
+            <objects>
+                <viewController id="NUz-qX-RUx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RFA-Hd-bBf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="yq1-Aa-kdS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Tz-3h-fJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2041" y="150"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="80c-Wz-X30">
@@ -195,4 +221,7 @@
             <point key="canvasLocation" x="-203" y="140"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="good" width="85" height="85"/>
+    </resources>
 </document>

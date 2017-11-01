@@ -10,6 +10,7 @@ import UIKit
 
 class DetailEateryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -22,6 +23,11 @@ class DetailEateryViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // adding border around smile-button
+        rateButton.layer.cornerRadius = 5
+        rateButton.layer.borderWidth = 1
+        rateButton.layer.borderColor = UIColor.white.cgColor
         
         // self-sizing cell methods
         tableView.estimatedRowHeight = 38

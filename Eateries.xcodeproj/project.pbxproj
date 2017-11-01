@@ -46,8 +46,8 @@
 		D4100BC21F9D5A5500367630 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */,
 				D4751AB11F9C165F005EEAAD /* DetailEateryViewController.swift */,
+				D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -77,8 +77,8 @@
 				D4751A971F99949F005EEAAD /* AppDelegate.swift */,
 				D4751AAF1F9C0D35005EEAAD /* Restaurants.swift */,
 				D4751A9B1F99949F005EEAAD /* Main.storyboard */,
-				D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */,
 				D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */,
+				D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */,
 				D4100BC21F9D5A5500367630 /* Detail */,
 			);
 			path = Eateries;
