@@ -15,6 +15,20 @@ class RateViewController: UIViewController {
     @IBOutlet weak var goodButton: UIButton!
     @IBOutlet weak var brilliantButton: UIButton!
     
+    // for rating system
+    var restaurantRating: String?
+    @IBAction func rateRestaurant(_ sender: UIButton) {
+        switch sender.tag {
+        case 0: restaurantRating = "bad"
+        case 1: restaurantRating = "good"
+        case 2: restaurantRating = "brilliant"
+        default: break
+        }
+        performSegue(withIdentifier: "unwindSegueToDetailViewController", sender: sender)
+    }
+    
+    
+    
     // goes after the view did load
     // in this case is used for animating of smile-buttons
     override func viewDidAppear(_ animated: Bool) {

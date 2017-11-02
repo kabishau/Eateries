@@ -17,8 +17,11 @@ class DetailEateryViewController: UIViewController, UITableViewDataSource, UITab
     var restaurant: Restaurant!
     
     // should be connected to "exit-button" through the Exit section
+    // also is used for data transforming
     @IBAction func unwindsegue(segue: UIStoryboardSegue) {
-        
+        guard let sourceViewController = segue.source as? RateViewController else { return }
+        guard let rating = sourceViewController.restaurantRating else { return }
+        rateButton.setImage(UIImage(named: rating), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
