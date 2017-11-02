@@ -10,8 +10,45 @@ import UIKit
 
 class RateViewController: UIViewController {
 
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var badButton: UIButton!
+    @IBOutlet weak var goodButton: UIButton!
+    @IBOutlet weak var brilliantButton: UIButton!
+    
+    // goes after the view did load
+    // in this case is used for animating of smile-buttons
+    override func viewDidAppear(_ animated: Bool) {
+        
+        /* option for the whole stack view
+        let ratingStackView = stackView
+        UIView.animate(withDuration: 0.5) {
+            ratingStackView?.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+        */
+        
+        // animating separate buttons
+        let buttonArray = [badButton, goodButton, brilliantButton]
+        // for loop for reaching every button in right order
+        
+        for (index, button) in buttonArray.enumerated() {
+            let delay = Double(index) * 0.2
+            UIView.animate(withDuration: 0.4, delay: delay, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                button?.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: nil)
+        }
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // scales whole stack view 0% from original size
+        //stackView.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
+        // scaling to 0% every button in stack view
+        badButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        goodButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        brilliantButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         
         // creating of blur effect
         let blurEffect = UIBlurEffect(style: .light)
