@@ -169,12 +169,22 @@
                                     <segue destination="NUz-qX-RUx" kind="showDetail" id="RFX-3h-vs8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqh-8b-Mca">
+                                <rect key="frame" x="254" y="136" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Iqh-8b-Mca" secondAttribute="height" multiplier="1:1" id="d5u-Bw-oYY"/>
+                                    <constraint firstAttribute="height" constant="50" id="med-BS-W6E"/>
+                                </constraints>
+                                <state key="normal" image="map"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="m8w-TK-OrP" firstAttribute="bottom" secondItem="Ve5-hu-T0Q" secondAttribute="bottom" id="184-cW-Q4A"/>
                             <constraint firstItem="k5z-Yf-8O3" firstAttribute="top" secondItem="m8w-TK-OrP" secondAttribute="top" constant="14" id="4yN-1R-Ile"/>
+                            <constraint firstItem="m8w-TK-OrP" firstAttribute="trailing" secondItem="Iqh-8b-Mca" secondAttribute="trailing" constant="16" id="Otr-bt-ATF"/>
                             <constraint firstItem="Ve5-hu-T0Q" firstAttribute="top" secondItem="m8w-TK-OrP" secondAttribute="top" id="P53-d9-ttl"/>
+                            <constraint firstItem="Iqh-8b-Mca" firstAttribute="top" secondItem="k5z-Yf-8O3" secondAttribute="bottom" constant="8" id="jdb-Y0-Mjn"/>
                             <constraint firstItem="Ve5-hu-T0Q" firstAttribute="leading" secondItem="m8w-TK-OrP" secondAttribute="leading" id="n0U-LD-iYZ"/>
                             <constraint firstItem="m8w-TK-OrP" firstAttribute="trailing" secondItem="Ve5-hu-T0Q" secondAttribute="trailing" id="qd0-IE-xZb"/>
                             <constraint firstItem="m8w-TK-OrP" firstAttribute="trailing" secondItem="k5z-Yf-8O3" secondAttribute="trailing" constant="16" id="xrM-AM-wyM"/>
@@ -183,6 +193,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="zxo-zU-4hm" id="zPm-n6-JKH"/>
+                        <outlet property="mapButton" destination="Iqh-8b-Mca" id="av4-Ef-RHj"/>
                         <outlet property="rateButton" destination="k5z-Yf-8O3" id="El2-H6-2Gi"/>
                         <outlet property="tableView" destination="Ve5-hu-T0Q" id="6kQ-HO-iZv"/>
                     </connections>
@@ -302,6 +313,7 @@
         <image name="brilliant" width="85" height="85"/>
         <image name="close" width="50" height="50"/>
         <image name="good" width="85" height="85"/>
+        <image name="map" width="50" height="50"/>
         <image name="rateBackground" width="200" height="286"/>
     </resources>
 </document>

@@ -11,6 +11,7 @@ import UIKit
 class DetailEateryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var rateButton: UIButton!
+    @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -31,6 +32,7 @@ class DetailEateryViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // adding border around smile-button
         rateButton.layer.cornerRadius = 5
