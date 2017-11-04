@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ddt-fJ-cgc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ddt-fJ-cgc">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -43,22 +43,22 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="JQh-q0-eA6">
-                                            <rect key="frame" x="95" y="10" width="217" height="64.5"/>
+                                            <rect key="frame" x="95" y="10" width="209" height="64.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iad-tL-LkB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="217" height="28.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="209" height="28.5"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIC-VM-fE8">
-                                                    <rect key="frame" x="0.0" y="29.5" width="217" height="18"/>
+                                                    <rect key="frame" x="0.0" y="29.5" width="209" height="18"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kI6-9B-hfH">
-                                                    <rect key="frame" x="0.0" y="48.5" width="217" height="16"/>
+                                                    <rect key="frame" x="0.0" y="48.5" width="209" height="16"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -94,6 +94,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohe-1R-Eb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="495" y="140.49295774647888"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="C5H-hM-hSr">
+            <objects>
+                <viewController id="mXm-Uc-6Rj" customClass="MapViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xdc-qP-fYI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZsD-Kx-gS9">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pef-sE-Zh9" firstAttribute="bottom" secondItem="ZsD-Kx-gS9" secondAttribute="bottom" id="5cM-lA-bJv"/>
+                            <constraint firstItem="Pef-sE-Zh9" firstAttribute="bottom" secondItem="ZsD-Kx-gS9" secondAttribute="bottom" id="S7Q-KJ-sXE"/>
+                            <constraint firstItem="ZsD-Kx-gS9" firstAttribute="top" secondItem="Pef-sE-Zh9" secondAttribute="top" id="Ssk-kD-cm6"/>
+                            <constraint firstItem="ZsD-Kx-gS9" firstAttribute="top" secondItem="Pef-sE-Zh9" secondAttribute="top" id="YHg-s0-74F"/>
+                            <constraint firstItem="ZsD-Kx-gS9" firstAttribute="trailing" secondItem="Pef-sE-Zh9" secondAttribute="trailing" id="ZK0-bU-cir"/>
+                            <constraint firstItem="Pef-sE-Zh9" firstAttribute="trailing" secondItem="ZsD-Kx-gS9" secondAttribute="trailing" id="gxL-4y-Xcn"/>
+                            <constraint firstItem="ZsD-Kx-gS9" firstAttribute="leading" secondItem="Pef-sE-Zh9" secondAttribute="leading" id="vPt-uf-4RJ"/>
+                            <constraint firstItem="ZsD-Kx-gS9" firstAttribute="leading" secondItem="Pef-sE-Zh9" secondAttribute="leading" id="xUZ-nu-GvV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pef-sE-Zh9"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ZsD-Kx-gS9" id="xQK-g3-QPs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jkr-hE-ZAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249" y="-606"/>
         </scene>
         <!--Detail Eatery View Controller-->
         <scene sceneID="co0-RM-qT3">
@@ -176,6 +209,9 @@
                                     <constraint firstAttribute="height" constant="50" id="med-BS-W6E"/>
                                 </constraints>
                                 <state key="normal" image="map"/>
+                                <connections>
+                                    <segue destination="mXm-Uc-6Rj" kind="show" identifier="mapSegue" id="ZAf-1p-eaU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
