@@ -33,11 +33,16 @@ class DetailEateryViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // adding border around rate and map buttons
+        let buttons = [rateButton, mapButton]
+        for button in buttons {
+            guard let button = button else { break }
+            
+            button.layer.cornerRadius = 5
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.white.cgColor
+        }
         
-        // adding border around smile-button
-        rateButton.layer.cornerRadius = 5
-        rateButton.layer.borderWidth = 1
-        rateButton.layer.borderColor = UIColor.white.cgColor
         
         // self-sizing cell methods
         tableView.estimatedRowHeight = 38
