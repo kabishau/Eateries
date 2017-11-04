@@ -11,6 +11,8 @@ import MapKit
 
 
 class MapViewController: UIViewController {
+    
+    var restaurant: Restaurant!
 
     @IBOutlet weak var mapView: MKMapView!
     

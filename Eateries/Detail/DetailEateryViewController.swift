@@ -91,5 +91,14 @@ class DetailEateryViewController: UIViewController, UITableViewDataSource, UITab
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // sending data to Map View Controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapSegue" {
+            let destinationViewController = segue.destination as! MapViewController
+            destinationViewController.restaurant = self.restaurant
+            
+        }
+    }
+    
     
 }
