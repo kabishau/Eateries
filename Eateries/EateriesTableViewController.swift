@@ -27,7 +27,10 @@ class EateriesTableViewController: UITableViewController {
         Restaurant(name: "Шок", type: "ресторан", location: "Уфа", image: "shok.jpg", isVisited: false),
         Restaurant(name: "Бочка", type: "ресторан", location:  "Уфа", image: "bochka.jpg", isVisited: false)]
     
-    
+    // unwindSegue from cancel button on new restaurant screen
+    @IBAction func close(segue: UIStoryboardSegue) {        
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = true
@@ -148,6 +151,7 @@ class EateriesTableViewController: UITableViewController {
             }
         }
     }
+    
     
     
 

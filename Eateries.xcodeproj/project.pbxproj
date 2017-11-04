@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2219403A1FAE3BE000D8DDFB /* NewEateryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221940391FAE3BE000D8DDFB /* NewEateryTableViewController.swift */; };
 		2275A2001FAA8B4800080602 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275A1FF1FAA8B4800080602 /* RateViewController.swift */; };
 		D4100BC41F9D5A9900367630 /* DetailEateryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */; };
 		D45CE4241FAD500D006CD9DE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CE4231FAD500D006CD9DE /* MapViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221940391FAE3BE000D8DDFB /* NewEateryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEateryTableViewController.swift; sourceTree = "<group>"; };
 		2275A1FF1FAA8B4800080602 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEateryTableViewCell.swift; sourceTree = "<group>"; };
 		D45CE4231FAD500D006CD9DE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				D4751A971F99949F005EEAAD /* AppDelegate.swift */,
 				D4751AAF1F9C0D35005EEAAD /* Restaurants.swift */,
 				D4751A9B1F99949F005EEAAD /* Main.storyboard */,
+				221940391FAE3BE000D8DDFB /* NewEateryTableViewController.swift */,
 				D4751AA91F999790005EEAAD /* EateriesTableViewController.swift */,
 				D4751AAB1F99A59A005EEAAD /* EateriesTableViewCell.swift */,
 				D4100BC21F9D5A5500367630 /* Detail */,
@@ -185,6 +188,7 @@
 				D4751AAA1F999790005EEAAD /* EateriesTableViewController.swift in Sources */,
 				D4751AAC1F99A59A005EEAAD /* EateriesTableViewCell.swift in Sources */,
 				D4751AB21F9C165F005EEAAD /* DetailEateryViewController.swift in Sources */,
+				2219403A1FAE3BE000D8DDFB /* NewEateryTableViewController.swift in Sources */,
 				2275A2001FAA8B4800080602 /* RateViewController.swift in Sources */,
 				D45CE4241FAD500D006CD9DE /* MapViewController.swift in Sources */,
 			);
