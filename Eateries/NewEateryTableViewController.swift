@@ -15,17 +15,11 @@ class NewEateryTableViewController: UITableViewController {
 
     }
 
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //
         
-        return 5
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }
