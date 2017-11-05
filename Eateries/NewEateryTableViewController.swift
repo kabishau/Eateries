@@ -8,13 +8,23 @@
 
 import UIKit
 
-class NewEateryTableViewController: UITableViewController {
+class NewEateryTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // ...EditedImage - to have ability save edited image
+        imageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        dismiss(animated: true, completion: nil)
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -42,6 +52,7 @@ class NewEateryTableViewController: UITableViewController {
         // checking is there source (camera and photo) on device - can be device without them?
         if UIImagePickerController.isSourceTypeAvailable(source) {
             let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
             self.present(imagePicker, animated: true, completion: nil)
