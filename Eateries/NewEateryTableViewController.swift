@@ -27,9 +27,11 @@ class NewEateryTableViewController: UITableViewController {
                 
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            alertController.addAction(cameraAction)
-            alertController.addAction(photoAction)
-            alertController.addAction(cancelAction)
+            
+            let actions = [cameraAction, photoAction, cancelAction]
+            for action in actions {
+                alertController.addAction(action)
+            }
             
             present(alertController, animated: true, completion: nil)
             
