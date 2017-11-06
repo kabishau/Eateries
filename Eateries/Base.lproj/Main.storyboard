@@ -261,6 +261,9 @@
                                                                     <state key="normal" title="Yes">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="isVisitedButtonsTapped:" destination="b76-sg-gCk" eventType="touchUpInside" id="YpN-lD-wrw"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqd-iZ-tU4">
                                                                     <rect key="frame" x="62" y="0.0" width="56" height="50"/>
@@ -269,6 +272,9 @@
                                                                     <state key="normal" title="No">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="isVisitedButtonsTapped:" destination="b76-sg-gCk" eventType="touchUpInside" id="9bu-OW-9d9"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
@@ -297,12 +303,22 @@
                     <navigationItem key="navigationItem" id="OkZ-Sy-D5Q">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JhW-6M-ycB">
                             <connections>
-                                <segue destination="Pdc-ad-Ta1" kind="unwind" unwindAction="closeWithSegue:" id="oyQ-F7-N6P"/>
+                                <segue destination="Pdc-ad-Ta1" kind="unwind" identifier="unwindSegueFromNewEatery" unwindAction="closeWithSegue:" id="oyQ-F7-N6P"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6DD-1y-dyt">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="b76-sg-gCk" id="wOb-6N-c1J"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressTextField" destination="9eS-pv-8Bb" id="9Aw-1Z-ozP"/>
                         <outlet property="imageView" destination="cvV-Yg-ol9" id="5EO-qj-bCe"/>
+                        <outlet property="noButton" destination="Qqd-iZ-tU4" id="2Zu-E0-WSt"/>
+                        <outlet property="restaurantTextField" destination="mYY-ei-tvc" id="DoL-8c-Eac"/>
+                        <outlet property="typeTextField" destination="dyY-Yv-bTS" id="des-kC-1hb"/>
+                        <outlet property="yesButton" destination="xC7-g6-7zC" id="QPF-K9-1tH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAc-Tw-RMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
