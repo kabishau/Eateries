@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2219403A1FAE3BE000D8DDFB /* NewEateryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221940391FAE3BE000D8DDFB /* NewEateryTableViewController.swift */; };
 		2275A2001FAA8B4800080602 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275A1FF1FAA8B4800080602 /* RateViewController.swift */; };
+		2281C9BB1FB0FF79001433F6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281C9BA1FB0FF79001433F6 /* CoreDataStack.swift */; };
 		D4100BC41F9D5A9900367630 /* DetailEateryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */; };
 		D45CE4241FAD500D006CD9DE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CE4231FAD500D006CD9DE /* MapViewController.swift */; };
 		D45CE4271FAD50CA006CD9DE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CE4261FAD50CA006CD9DE /* MapKit.framework */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		221940391FAE3BE000D8DDFB /* NewEateryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEateryTableViewController.swift; sourceTree = "<group>"; };
 		2275A1FF1FAA8B4800080602 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
+		2281C9BA1FB0FF79001433F6 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEateryTableViewCell.swift; sourceTree = "<group>"; };
 		D45CE4231FAD500D006CD9DE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D45CE4261FAD50CA006CD9DE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -93,6 +95,7 @@
 				D4751AA01F99949F005EEAAD /* LaunchScreen.storyboard */,
 				D4751A9E1F99949F005EEAAD /* Assets.xcassets */,
 				D4751A971F99949F005EEAAD /* AppDelegate.swift */,
+				2281C9BA1FB0FF79001433F6 /* CoreDataStack.swift */,
 				D4751AAF1F9C0D35005EEAAD /* Restaurants.swift */,
 				D4751A9B1F99949F005EEAAD /* Main.storyboard */,
 				221940391FAE3BE000D8DDFB /* NewEateryTableViewController.swift */,
@@ -187,6 +190,7 @@
 				D4751A981F99949F005EEAAD /* AppDelegate.swift in Sources */,
 				D4751AAA1F999790005EEAAD /* EateriesTableViewController.swift in Sources */,
 				D4751AAC1F99A59A005EEAAD /* EateriesTableViewCell.swift in Sources */,
+				2281C9BB1FB0FF79001433F6 /* CoreDataStack.swift in Sources */,
 				D4751AB21F9C165F005EEAAD /* DetailEateryViewController.swift in Sources */,
 				2219403A1FAE3BE000D8DDFB /* NewEateryTableViewController.swift in Sources */,
 				2275A2001FAA8B4800080602 /* RateViewController.swift in Sources */,
