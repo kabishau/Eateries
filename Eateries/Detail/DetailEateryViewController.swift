@@ -48,7 +48,7 @@ class DetailEateryViewController: UIViewController, UITableViewDataSource, UITab
         tableView.estimatedRowHeight = 38
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        imageView.image = UIImage(named: restaurant.image)
+        imageView.image = UIImage(data: restaurant.image! as Data)//UIImage(named: restaurant.image)
 
         // removing the rest of the unused tableView
         tableView.tableFooterView = UIView(frame: CGRect.zero)

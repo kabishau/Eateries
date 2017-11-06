@@ -23,7 +23,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         // instance of Core Location Geocoder Class
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(restaurant.location) { (placemarks, error) in
+        geocoder.geocodeAddressString(restaurant.location!) { (placemarks, error) in
             guard error == nil else { return }
             guard let placemarks = placemarks else { return }
             let placemark = placemarks.first!
@@ -59,7 +59,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         // adding image to the right side of annotation
         let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        rightImage.image = UIImage(named: restaurant.image)
+        rightImage.image = UIImage(data: restaurant.image! as Data)//UIImage(named: restaurant.image)
         annotationView?.rightCalloutAccessoryView = rightImage
         
         // pin customization

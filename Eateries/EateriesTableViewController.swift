@@ -10,7 +10,9 @@ import UIKit
 
 class EateriesTableViewController: UITableViewController {
     
-    var restaurants: [Restaurant] = [
+    var restaurants: [Restaurant] = []
+    /*
+        [
         Restaurant(name: "Ogonёk Grill&Bar", type: "ресторан", location: "Уфа, very-very long super-duper address that will never and", image: "ogonek.jpg", isVisited: false),
         Restaurant(name: "Елу", type: "ресторан", location: "Уфа", image: "elu.jpg", isVisited: false),
         Restaurant(name: "Bonsai", type: "ресторан", location: "Уфа", image: "bonsai.jpg", isVisited: false),
@@ -26,7 +28,9 @@ class EateriesTableViewController: UITableViewController {
         Restaurant(name: "Love&Life", type: "ресторан", location: "Уфа", image: "love.jpg", isVisited: false),
         Restaurant(name: "Шок", type: "ресторан", location: "Уфа", image: "shok.jpg", isVisited: false),
         Restaurant(name: "Бочка", type: "ресторан", location:  "Уфа", image: "bochka.jpg", isVisited: false)]
-    
+     */
+ 
+ 
     // unwindSegue from cancel button on new restaurant screen
     @IBAction func close(segue: UIStoryboardSegue) {        
         
@@ -64,7 +68,7 @@ class EateriesTableViewController: UITableViewController {
         cell.nameLabel.text = restaurants[indexPath.row].name
         cell.typeLabel.text = restaurants[indexPath.row].type
         cell.locationLabel.text = restaurants[indexPath.row].location
-        cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
+        cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image! as Data)
         cell.accessoryType = self.restaurants[indexPath.row].isVisited ? .checkmark : .none
         
         // making images round
@@ -126,8 +130,8 @@ class EateriesTableViewController: UITableViewController {
         }
         let share = UITableViewRowAction(style: .default, title: "Share") { (action, indexPath) in
             
-            let defaulText = "I'm in \(self.restaurants[indexPath.row].name)"
-            if let image = UIImage(named: self.restaurants[indexPath.row].image) {
+            let defaulText = "I'm in " + self.restaurants[indexPath.row].name!
+            if let image = UIImage(data: self.restaurants[indexPath.row].image! as Data) {
                 let activityController = UIActivityViewController(activityItems: [defaulText, image], applicationActivities: nil)
                 self.present(activityController, animated: true, completion: nil)
             }
