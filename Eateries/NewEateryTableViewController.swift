@@ -37,6 +37,7 @@ class NewEateryTableViewController: UITableViewController, UIImagePickerControll
         } else {
             // trying to reach viewContext property - standard way to do this
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.conreDataStack.persistentContainer.viewContext {
+                // creating instance of the class in our context
                 let restaurant = Restaurant(context: context)
                 restaurant.name = restaurantTextField.text
                 restaurant.location = addressTextField.text
