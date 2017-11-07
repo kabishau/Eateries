@@ -43,8 +43,10 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
         definesPresentationContext = true
         // for implementing UISearchBarDelegate Protocol
         searchController.searchBar.delegate = self
-        
-        
+        // changing bar color and font color
+        searchController.searchBar.barTintColor = #colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1)
+        searchController.searchBar.tintColor = .white
+
         
         // self-sizing cell establishing
         tableView.estimatedRowHeight = 85
