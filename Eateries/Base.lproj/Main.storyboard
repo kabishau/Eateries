@@ -570,6 +570,29 @@
             </objects>
             <point key="canvasLocation" x="-253" y="140"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="bFe-Et-lbi">
+            <objects>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="awK-sO-0jI" customClass="PageViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lLv-yP-Fjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-253" y="-1273"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="J8a-Vs-RPz">
+            <objects>
+                <viewController storyboardIdentifier="contentViewController" id="1Yi-I5-N7j" customClass="ContentViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bu6-bJ-2ff">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="eXH-WP-AnN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BG6-qc-SEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495" y="-1274"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0OG-gQ-Brb">
             <objects>
