@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
+        // customizing the status bar
+        // why height is 20? Is it fixed some where?
+        let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 20))
+        statusBarView.backgroundColor = #colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1)
+        self.window?.rootViewController?.view.insertSubview(statusBarView, at: 1)
+        
         // changing title of the navigation bar
         if let barFont = UIFont(name: "AppleSDGothicNeo-Light", size: 24) {
             UINavigationBar.appearance().titleTextAttributes = [ NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: barFont]
