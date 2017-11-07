@@ -43,7 +43,7 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
         // applying created sortDescriptor to fetchRequest
         fetchRequest.sortDescriptors = [sortDescriptor]
         // creating the context
-        if let context = (UIApplication.shared.delegate as? AppDelegate)?.conreDataStack.persistentContainer.viewContext {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultsController.delegate = self
             
@@ -158,6 +158,20 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             self.restaurants.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            // deleting item from Core Data
+            let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext
+            // getting object and deleting it from context
+            let objectToDelete = self.fetchResultsController.object(at: indexPath)
+            context?.delete(objectToDelete)
+            
+            do {
+                try context?.save()
+            } catch {
+                print(error.localizedDescription) 
+            }
+            
+            
         }
         let share = UITableViewRowAction(style: .default, title: "Share") { (action, indexPath) in
             

@@ -36,7 +36,7 @@ class NewEateryTableViewController: UITableViewController, UIImagePickerControll
             print("not all fields are filled in")
         } else {
             // trying to reach viewContext property - standard way to do this
-            if let context = (UIApplication.shared.delegate as? AppDelegate)?.conreDataStack.persistentContainer.viewContext {
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
                 // creating instance of the class in our context
                 let restaurant = Restaurant(context: context)
                 restaurant.name = restaurantTextField.text
