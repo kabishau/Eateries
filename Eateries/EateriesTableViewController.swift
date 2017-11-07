@@ -14,7 +14,9 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
     var restaurants: [Restaurant] = []
     
     var fetchResultsController: NSFetchedResultsController<Restaurant>!
-    
+    // for search
+    var searchController: UISearchController!
+    var filteredResultArray: [Restaurant] = []
 
     // unwindSegue from cancel button on new restaurant screen
     @IBAction func close(segue: UIStoryboardSegue) {        
@@ -27,6 +29,17 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: Search
+        // nil - results will be shown on the same screen; can be custom searchResultController
+        searchController = UISearchController(searchResultsController: nil)
+        //
+        searchController.searchResultsUpdater = self
+        // if true - screen becomes dimmed; false - no such representation
+        searchController.dimsBackgroundDuringPresentation = false
+        // showing search bar
+        tableView.tableHeaderView = searchController.searchBar
+        
         
         // self-sizing cell establishing
         tableView.estimatedRowHeight = 85
@@ -90,17 +103,33 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredResultArray.count
+        }
         return restaurants.count
+    }
+    
+    // method for displaying different array of restaurants depending on usage of search bar
+    func restaurantToDisplay(indexPath: IndexPath) -> Restaurant {
+        let restaurant: Restaurant
+        if searchController.isActive && searchController.searchBar.text != "" {
+            restaurant = filteredResultArray[indexPath.row]
+        } else {
+            restaurant = restaurants[indexPath.row]
+        }
+        return restaurant
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EateriesTableViewCell
         
-        cell.nameLabel.text = restaurants[indexPath.row].name
-        cell.typeLabel.text = restaurants[indexPath.row].type
-        cell.locationLabel.text = restaurants[indexPath.row].location
-        cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image! as Data)
-        cell.accessoryType = self.restaurants[indexPath.row].isVisited ? .checkmark : .none
+        let restaurant = restaurantToDisplay(indexPath: indexPath)
+        
+        cell.nameLabel.text = restaurant.name
+        cell.typeLabel.text = restaurant.type
+        cell.locationLabel.text = restaurant.location
+        cell.thumbnailImageView.image = UIImage(data: restaurant.image! as Data)
+        cell.accessoryType = restaurant.isVisited ? .checkmark : .none
         
         // making images round
         cell.thumbnailImageView.layer.cornerRadius = 32.5
@@ -187,22 +216,34 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
         
         return [delete, share]
     }
-    
-    
-    
-    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationViewController = segue.destination as! DetailEateryViewController
-                destinationViewController.restaurant = self.restaurants[indexPath.row]
+                destinationViewController.restaurant = restaurantToDisplay(indexPath: indexPath)
             }
         }
     }
     
-    
-    
-
+    // method for updateSearchResults
+    func filterContentFor(searchText text: String) {
+        // new array from restaurants array depending on filter
+        filteredResultArray = restaurants.filter({ (restaurant) -> Bool in
+            return (restaurant.name?.lowercased().contains(text.lowercased()))!
+        })
+    }
 
 }
+
+extension EateriesTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentFor(searchText: searchController.searchBar.text!)
+        tableView.reloadData()
+    }
+}
+
+
+
+
