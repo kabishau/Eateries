@@ -39,6 +39,9 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
         searchController.dimsBackgroundDuringPresentation = false
         // showing search bar
         tableView.tableHeaderView = searchController.searchBar
+        // locking search bar on the main screen (it doesn't appear on detailed screen)
+        definesPresentationContext = true
+        
         
         
         // self-sizing cell establishing
