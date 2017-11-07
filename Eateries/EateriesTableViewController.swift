@@ -41,6 +41,8 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
         tableView.tableHeaderView = searchController.searchBar
         // locking search bar on the main screen (it doesn't appear on detailed screen)
         definesPresentationContext = true
+        // for implementing UISearchBarDelegate Protocol
+        searchController.searchBar.delegate = self
         
         
         
@@ -244,6 +246,18 @@ extension EateriesTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentFor(searchText: searchController.searchBar.text!)
         tableView.reloadData()
+    }
+}
+
+extension EateriesTableViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if searchBar.text == "" {
+            navigationController?.hidesBarsOnSwipe = false
+        }
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        navigationController?.hidesBarsOnSwipe = true
     }
 }
 
