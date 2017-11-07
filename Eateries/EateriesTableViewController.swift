@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EateriesTableViewController: UITableViewController {
+class EateriesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var restaurants: [Restaurant] = []
     
@@ -45,18 +45,42 @@ class EateriesTableViewController: UITableViewController {
         // creating the context
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.conreDataStack.persistentContainer.viewContext {
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultsController.delegate = self
             
             do {
                 try fetchResultsController.performFetch()
+                // saving retrieved data into restaurants array
                 restaurants = fetchResultsController.fetchedObjects!
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
-            
+        }
+    }
+    
+    // MARK: - Fetch results controller delegate
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .insert: guard let indexPath = newIndexPath else { break }
+        tableView.insertRows(at: [indexPath], with: .fade)
+        case .delete: guard let indexPath = indexPath else { break }
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        case .update: guard let indexPath = indexPath else { break }
+        tableView.reloadRows(at: [indexPath], with: .fade)
+        default:
+            tableView.reloadData()
         }
         
-        
-
+        restaurants = controller.fetchedObjects as! [Restaurant]
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
     }
 
     // MARK: - Table view data source
