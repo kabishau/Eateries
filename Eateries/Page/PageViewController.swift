@@ -16,7 +16,40 @@ class PageViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dataSource = self
 
     }
+    
+    func displayViewController(atIndex index: Int) -> ContentViewController? {
+        
+        guard index >= 0 else { return nil }
+        guard index < headersArray.count else { return nil }
+        guard let contentViewController = storyboard?.instantiateViewController(withIdentifier: "contentViewController") as? ContentViewController else { return nil }
+        
+        contentViewController.header = headersArray[index]
+        contentViewController.subHeader = subHeaderArray[index]
+        contentViewController.imageFile = imagesArray[index]
+        contentViewController.index = index
+        
+        return contentViewController
+        
+    }
 
+}
+
+extension PageViewController: UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        var index = (viewController as! ContentViewController).index
+        index -= 1
+        return displayViewController(atIndex: index)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        var index = (viewController as! ContentViewController).index
+        index += 1
+        return displayViewController(atIndex: index)
+    }
+    
+    
 }
