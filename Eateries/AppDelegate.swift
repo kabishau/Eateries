@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
+        // appearance of tab bar
+        UITabBar.appearance().tintColor = .white
+        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "tabSelectBG")
+        
+        
         // customizing the status bar
         // why height is 20? Is it fixed some where?
         let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 20))
