@@ -81,6 +81,11 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // checking did user see the Intro pages, if not - displaying  first page
+        let userDefaults = UserDefaults.standard
+        let wasIntroWatched = userDefaults.bool(forKey: "wasIntroWatched")
+        guard !wasIntroWatched else { return }
+        
         // calling Page View Controller from storyboard without any segues
         // casting to PageViewController to have access to all properties
         if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "pageViewController") as? PageViewController {

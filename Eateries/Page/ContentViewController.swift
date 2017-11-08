@@ -22,6 +22,12 @@ class ContentViewController: UIViewController {
             let pageViewController = parent as! PageViewController
             pageViewController.displayNextViewController(atIndex: index)
         case 1:
+            //getting access to UserDefaults
+            let userDefaults = UserDefaults.standard
+            // setting the value
+            userDefaults.set(true, forKey: "wasIntroWatched")
+            userDefaults.synchronize()
+            
             dismiss(animated: true, completion: nil)
         default:
             break
