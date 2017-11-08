@@ -39,7 +39,12 @@ class PageViewController: UIPageViewController {
         contentViewController.index = index
         
         return contentViewController
-        
+    }
+    
+    func displayNextViewController(atIndex index: Int) {
+        if let contentViewController = displayViewController(atIndex: index + 1) {
+            setViewControllers([contentViewController], direction: .forward, animated: true, completion: nil)
+        }
     }
 
 }

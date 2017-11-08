@@ -14,6 +14,19 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var subHeaderLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pageContol: UIPageControl!
+    @IBOutlet weak var pageButton: UIButton!
+    
+    @IBAction func pageButtonTapped(_ sender: UIButton) {
+        switch index {
+        case 0:
+            let pageViewController = parent as! PageViewController
+            pageViewController.displayNextViewController(atIndex: index)
+        case 1:
+            dismiss(animated: true, completion: nil)
+        default:
+            break
+        }
+    }
     
     var header = ""
     var subHeader = ""
@@ -23,6 +36,19 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pageButton.layer.cornerRadius = 15
+        pageButton.clipsToBounds = true
+        pageButton.layer.borderWidth = 2
+        pageButton.layer.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        pageButton.layer.borderColor = (#colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)).cgColor
+        
+        switch index {
+        case 0: pageButton.setTitle("Go ahead", for: .normal)
+        case 1: pageButton.setTitle("Open App", for: .normal)
+        default:
+            break
+        }
         
         headerLabel.text = header
         subHeaderLabel.text = subHeader

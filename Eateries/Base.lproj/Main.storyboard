@@ -587,13 +587,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrH-tW-nOw">
-                                <rect key="frame" x="0.0" y="92" width="320" height="32"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="32"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubHeader" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-rT-37x">
-                                <rect key="frame" x="0.0" y="150" width="320" height="73"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="wmF-nd-rPH"/>
                                 </constraints>
@@ -610,13 +610,28 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vkI-17-uXu">
                                 <rect key="frame" x="141" y="523" width="39" height="37"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfT-jc-XNB">
+                                <rect key="frame" x="68.5" y="195" width="183" height="48"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MfT-jc-XNB" secondAttribute="height" multiplier="61:16" id="oRo-fK-8zf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="183" id="ohE-Vx-9yB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pageButtonTapped:" destination="1Yi-I5-N7j" eventType="touchUpInside" id="95N-K9-MaH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eXH-WP-AnN" firstAttribute="trailing" secondItem="hPb-rT-37x" secondAttribute="trailing" id="0fr-bj-AFV"/>
-                            <constraint firstItem="XrH-tW-nOw" firstAttribute="top" secondItem="eXH-WP-AnN" secondAttribute="top" constant="72" id="3CJ-ht-dGe"/>
+                            <constraint firstItem="XrH-tW-nOw" firstAttribute="top" secondItem="eXH-WP-AnN" secondAttribute="top" constant="30" id="3CJ-ht-dGe"/>
                             <constraint firstItem="vkI-17-uXu" firstAttribute="centerX" secondItem="eXH-WP-AnN" secondAttribute="centerX" id="4WD-b5-c7z"/>
                             <constraint firstItem="hPb-rT-37x" firstAttribute="leading" secondItem="eXH-WP-AnN" secondAttribute="leading" id="BnV-FN-pKC"/>
+                            <constraint firstItem="MfT-jc-XNB" firstAttribute="centerX" secondItem="eXH-WP-AnN" secondAttribute="centerX" id="Wqe-7t-kd3"/>
                             <constraint firstItem="eXH-WP-AnN" firstAttribute="trailing" secondItem="XrH-tW-nOw" secondAttribute="trailing" id="XW9-ac-zwU"/>
                             <constraint firstItem="OOS-Fp-fh4" firstAttribute="leading" secondItem="eXH-WP-AnN" secondAttribute="leading" id="egz-mn-77G"/>
                             <constraint firstItem="eXH-WP-AnN" firstAttribute="bottom" secondItem="vkI-17-uXu" secondAttribute="bottom" constant="8" id="fUI-9t-fCL"/>
@@ -624,12 +639,14 @@
                             <constraint firstItem="OOS-Fp-fh4" firstAttribute="bottom" secondItem="eXH-WP-AnN" secondAttribute="bottom" id="oRy-a1-86x"/>
                             <constraint firstItem="OOS-Fp-fh4" firstAttribute="trailing" secondItem="eXH-WP-AnN" secondAttribute="trailing" id="qp9-fR-Elp"/>
                             <constraint firstItem="hPb-rT-37x" firstAttribute="top" secondItem="XrH-tW-nOw" secondAttribute="bottom" constant="26" id="xz7-yt-bnb"/>
+                            <constraint firstItem="MfT-jc-XNB" firstAttribute="top" secondItem="hPb-rT-37x" secondAttribute="bottom" constant="14" id="z1g-7y-bEx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eXH-WP-AnN"/>
                     </view>
                     <connections>
                         <outlet property="headerLabel" destination="XrH-tW-nOw" id="nCx-qG-8RA"/>
                         <outlet property="imageView" destination="OOS-Fp-fh4" id="jj6-aN-4i1"/>
+                        <outlet property="pageButton" destination="MfT-jc-XNB" id="R20-bt-LfK"/>
                         <outlet property="pageContol" destination="vkI-17-uXu" id="AvE-Ae-csO"/>
                         <outlet property="subHeaderLabel" destination="hPb-rT-37x" id="SLv-b3-kQH"/>
                     </connections>
