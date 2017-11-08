@@ -607,14 +607,19 @@
                                     <constraint firstAttribute="width" secondItem="OOS-Fp-fh4" secondAttribute="height" multiplier="32:31" id="z75-zf-eMw"/>
                                 </constraints>
                             </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vkI-17-uXu">
+                                <rect key="frame" x="141" y="523" width="39" height="37"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eXH-WP-AnN" firstAttribute="trailing" secondItem="hPb-rT-37x" secondAttribute="trailing" id="0fr-bj-AFV"/>
                             <constraint firstItem="XrH-tW-nOw" firstAttribute="top" secondItem="eXH-WP-AnN" secondAttribute="top" constant="72" id="3CJ-ht-dGe"/>
+                            <constraint firstItem="vkI-17-uXu" firstAttribute="centerX" secondItem="eXH-WP-AnN" secondAttribute="centerX" id="4WD-b5-c7z"/>
                             <constraint firstItem="hPb-rT-37x" firstAttribute="leading" secondItem="eXH-WP-AnN" secondAttribute="leading" id="BnV-FN-pKC"/>
                             <constraint firstItem="eXH-WP-AnN" firstAttribute="trailing" secondItem="XrH-tW-nOw" secondAttribute="trailing" id="XW9-ac-zwU"/>
                             <constraint firstItem="OOS-Fp-fh4" firstAttribute="leading" secondItem="eXH-WP-AnN" secondAttribute="leading" id="egz-mn-77G"/>
+                            <constraint firstItem="eXH-WP-AnN" firstAttribute="bottom" secondItem="vkI-17-uXu" secondAttribute="bottom" constant="8" id="fUI-9t-fCL"/>
                             <constraint firstItem="XrH-tW-nOw" firstAttribute="leading" secondItem="eXH-WP-AnN" secondAttribute="leading" id="lcE-w9-1DG"/>
                             <constraint firstItem="OOS-Fp-fh4" firstAttribute="bottom" secondItem="eXH-WP-AnN" secondAttribute="bottom" id="oRy-a1-86x"/>
                             <constraint firstItem="OOS-Fp-fh4" firstAttribute="trailing" secondItem="eXH-WP-AnN" secondAttribute="trailing" id="qp9-fR-Elp"/>
@@ -625,6 +630,7 @@
                     <connections>
                         <outlet property="headerLabel" destination="XrH-tW-nOw" id="nCx-qG-8RA"/>
                         <outlet property="imageView" destination="OOS-Fp-fh4" id="jj6-aN-4i1"/>
+                        <outlet property="pageContol" destination="vkI-17-uXu" id="AvE-Ae-csO"/>
                         <outlet property="subHeaderLabel" destination="hPb-rT-37x" id="SLv-b3-kQH"/>
                     </connections>
                 </viewController>
