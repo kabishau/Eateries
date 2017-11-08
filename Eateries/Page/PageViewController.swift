@@ -14,14 +14,21 @@ class PageViewController: UIPageViewController {
     var subHeaderArray = ["Create a list of your favourite restaurants", "Find and check on map your favourite restaurants"]
     var imagesArray = ["food", "iphoneMap"]
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.dataSource = self
+        
+        if let firstViewController = displayViewController(atIndex: 0) {
+            setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+        }
 
     }
     
     func displayViewController(atIndex index: Int) -> ContentViewController? {
         
+        // checking to avoid crashing when user will try to swape to view controller that doesn't exist
         guard index >= 0 else { return nil }
         guard index < headersArray.count else { return nil }
         guard let contentViewController = storyboard?.instantiateViewController(withIdentifier: "contentViewController") as? ContentViewController else { return nil }
@@ -37,6 +44,7 @@ class PageViewController: UIPageViewController {
 
 }
 
+// method for supporting scrolling between pages back and force
 extension PageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

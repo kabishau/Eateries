@@ -77,6 +77,18 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
         }
     }
     
+    // it will upload Page View Controller at the top of main screen
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // calling Page View Controller from storyboard without any segues
+        // casting to PageViewController to have access to all properties
+        if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "pageViewController") as? PageViewController {
+            present(pageViewController, animated: true, completion: nil)
+        }
+        
+    }
+    
     // MARK: - Fetch results controller delegate
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
