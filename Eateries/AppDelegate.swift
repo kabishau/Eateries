@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // why height is 20? Is it fixed some where?
         let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 20))
         statusBarView.backgroundColor = #colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1)
-        self.window?.rootViewController?.view.insertSubview(statusBarView, at: 1)
+        self.window?.rootViewController?.view.insertSubview(statusBarView, at: 0)
         
         // changing title of the navigation bar
         if let barFont = UIFont(name: "AppleSDGothicNeo-Light", size: 24) {
