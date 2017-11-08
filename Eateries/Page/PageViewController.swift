@@ -59,5 +59,14 @@ extension PageViewController: UIPageViewControllerDataSource {
         return displayViewController(atIndex: index)
     }
     
+    // standart implementing of Page Control
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return headersArray.count
+    }
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        let contentViewController = storyboard?.instantiateViewController(withIdentifier: "contentViewController") as? ContentViewController
+        return contentViewController!.index
+    }
+    
     
 }
