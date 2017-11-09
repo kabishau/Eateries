@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2219403A1FAE3BE000D8DDFB /* NewEateryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221940391FAE3BE000D8DDFB /* NewEateryTableViewController.swift */; };
+		2262B53C1FB3C3AB00851A0E /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262B53B1FB3C3AB00851A0E /* AboutTableViewController.swift */; };
 		2275A2001FAA8B4800080602 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275A1FF1FAA8B4800080602 /* RateViewController.swift */; };
 		2281C9BB1FB0FF79001433F6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281C9BA1FB0FF79001433F6 /* CoreDataStack.swift */; };
 		2281C9BE1FB10202001433F6 /* Eateries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2281C9BC1FB10202001433F6 /* Eateries.xcdatamodeld */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		221940391FAE3BE000D8DDFB /* NewEateryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEateryTableViewController.swift; sourceTree = "<group>"; };
+		2262B53B1FB3C3AB00851A0E /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		2275A1FF1FAA8B4800080602 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		2281C9BA1FB0FF79001433F6 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		2281C9BD1FB10202001433F6 /* Eateries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eateries.xcdatamodel; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				2275A1FF1FAA8B4800080602 /* RateViewController.swift */,
 				D45CE4231FAD500D006CD9DE /* MapViewController.swift */,
 				2281C9BC1FB10202001433F6 /* Eateries.xcdatamodeld */,
+				2262B53B1FB3C3AB00851A0E /* AboutTableViewController.swift */,
 			);
 			path = Eateries;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4100BC41F9D5A9900367630 /* DetailEateryTableViewCell.swift in Sources */,
+				2262B53C1FB3C3AB00851A0E /* AboutTableViewController.swift in Sources */,
 				2281C9BE1FB10202001433F6 /* Eateries.xcdatamodeld in Sources */,
 				D4751A981F99949F005EEAAD /* AppDelegate.swift in Sources */,
 				228F5FBF1FB26B5800959C13 /* PageViewController.swift in Sources */,

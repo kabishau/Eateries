@@ -1,0 +1,54 @@
+//
+//  AboutTableViewController.swift
+//  Eateries
+//
+//  Created by user131656 on 11/8/17.
+//  Copyright © 2017 Aleksey Kabishau. All rights reserved.
+//
+
+import UIKit
+
+class AboutTableViewController: UITableViewController {
+    
+    let sectionsHeaders = ["Social Media", "Websites"]
+    let sectionsContent = [["facebook", "vk", "youtube"], ["swiftbook.ru", "forum.swiftbook.ru"]]
+    let firstSectionLinks = ["https://www.facebook.com/swiftbook.ru/", "https://vk.com/swiftbook", "https://www.youtube.com/channel/UCXlCPCsB09ftBA5bQfiSWoQ"]
+    
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // removing unnecessary row at the bottom
+        tableView.tableFooterView = UIView(frame: .zero)
+
+    }
+
+
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionsHeaders.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionsHeaders[section]
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sectionsContent[section].count
+    }
+
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = sectionsContent[indexPath.section][indexPath.row]
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+
+
+}
