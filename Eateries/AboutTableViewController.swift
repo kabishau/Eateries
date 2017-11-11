@@ -47,6 +47,7 @@ class AboutTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // selected rows from first section making transition to Web View Controller
         switch indexPath.section {
         case 0:
             switch indexPath.row {
@@ -58,14 +59,17 @@ class AboutTableViewController: UITableViewController {
             break
         }
         
-        
-        
-        
-        
-        
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
-
+    
+    // it's important to call this method after didSelectRowAt because at the and of that method row is deselected (it will be nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWebPageSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationViewController = segue.destination as! WebViewController
+                destinationViewController.url = URL(string: firstSectionLinks[indexPath])
+            }
+        }
+    }
 
 }
