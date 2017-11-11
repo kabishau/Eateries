@@ -36,8 +36,14 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         toolbarItems = [progressButton, flexibleSpacer, refreshButton]
         navigationController?.isToolbarHidden = false
         
-        
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
 
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            progressView.progress = Float(webView.estimatedProgress)
+        }
     }
 
 }
