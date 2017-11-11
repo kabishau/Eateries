@@ -67,7 +67,7 @@ class AboutTableViewController: UITableViewController {
         if segue.identifier == "showWebPageSegue" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationViewController = segue.destination as! WebViewController
-                destinationViewController.url = URL(string: firstSectionLinks[indexPath])
+                destinationViewController.url = URL(string: firstSectionLinks[indexPath.row])
             }
         }
     }
