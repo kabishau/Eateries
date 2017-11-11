@@ -46,6 +46,23 @@ class AboutTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0..<firstSectionLinks.count:
+                performSegue(withIdentifier: "showWebPageSegue", sender: self)
+            default: break
+            }
+        default:
+            break
+        }
+        
+        
+        
+        
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
