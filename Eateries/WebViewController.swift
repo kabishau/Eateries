@@ -45,5 +45,11 @@ class WebViewController: UIViewController, WKNavigationDelegate {
             progressView.progress = Float(webView.estimatedProgress)
         }
     }
+    
+    // adding title to Web View Controller at the end of loading process depending on web view title
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        title = webView.title
+    }
+    
 
 }
