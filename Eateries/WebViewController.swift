@@ -14,6 +14,12 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     var url: URL!
     var webView: WKWebView!
     var progressView: UIProgressView!
+    
+    /* work without this deinit method */
+    // to avoid crashing app because of having observer when current view controller is dismissed
+    deinit {
+        webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
