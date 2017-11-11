@@ -13,6 +13,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     
     var url: URL!
     var webView: WKWebView!
+    var progressView: UIProgressView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,18 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         let request = URLRequest(url: url)
         webView.load(request)
         webView.allowsBackForwardNavigationGestures = true
+        
+        progressView = UIProgressView(progressViewStyle: .default)
+        progressView.sizeToFit()
+        
+        let progressButton = UIBarButtonItem(customView: progressView)
+        let flexibleSpacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+        
+        toolbarItems = [progressButton, flexibleSpacer, refreshButton]
+        navigationController?.isToolbarHidden = false
+        
+        
 
     }
 
