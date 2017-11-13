@@ -15,6 +15,7 @@
 		2281C9BE1FB10202001433F6 /* Eateries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2281C9BC1FB10202001433F6 /* Eateries.xcdatamodeld */; };
 		228F5FBD1FB26B0500959C13 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F5FBC1FB26B0500959C13 /* ContentViewController.swift */; };
 		228F5FBF1FB26B5800959C13 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228F5FBE1FB26B5800959C13 /* PageViewController.swift */; };
+		22FD7ED01FBA421300940031 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FD7ECF1FBA421300940031 /* CloudKit.framework */; };
 		D4100BC41F9D5A9900367630 /* DetailEateryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */; };
 		D45CE4241FAD500D006CD9DE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CE4231FAD500D006CD9DE /* MapViewController.swift */; };
 		D45CE4271FAD50CA006CD9DE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CE4261FAD50CA006CD9DE /* MapKit.framework */; };
@@ -36,6 +37,8 @@
 		2281C9BD1FB10202001433F6 /* Eateries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eateries.xcdatamodel; sourceTree = "<group>"; };
 		228F5FBC1FB26B0500959C13 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		228F5FBE1FB26B5800959C13 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		22FD7ECE1FBA420C00940031 /* Eateries.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eateries.entitlements; sourceTree = "<group>"; };
+		22FD7ECF1FBA421300940031 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D4100BC31F9D5A9900367630 /* DetailEateryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEateryTableViewCell.swift; sourceTree = "<group>"; };
 		D45CE4231FAD500D006CD9DE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D45CE4261FAD50CA006CD9DE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -56,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D45CE4271FAD50CA006CD9DE /* MapKit.framework in Frameworks */,
+				22FD7ED01FBA421300940031 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 		D45CE4251FAD50CA006CD9DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22FD7ECF1FBA421300940031 /* CloudKit.framework */,
 				D45CE4261FAD50CA006CD9DE /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -108,6 +113,7 @@
 		D4751A961F99949F005EEAAD /* Eateries */ = {
 			isa = PBXGroup;
 			children = (
+				22FD7ECE1FBA420C00940031 /* Eateries.entitlements */,
 				D4751AA31F99949F005EEAAD /* Info.plist */,
 				D4751AA01F99949F005EEAAD /* LaunchScreen.storyboard */,
 				D4751A9E1F99949F005EEAAD /* Assets.xcassets */,
@@ -163,6 +169,12 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -355,11 +367,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Eateries/Eateries.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7L32597M73;
 				INFOPLIST_FILE = Eateries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamline.Eateries;
+				PRODUCT_BUNDLE_IDENTIFIER = "-L32597M73.com.dreamline.EateriesTut";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -370,11 +383,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Eateries/Eateries.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7L32597M73;
 				INFOPLIST_FILE = Eateries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamline.Eateries;
+				PRODUCT_BUNDLE_IDENTIFIER = "-L32597M73.com.dreamline.EateriesTut";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
